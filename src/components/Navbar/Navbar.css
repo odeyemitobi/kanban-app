@@ -1,0 +1,24 @@
+.NavbarItems {
+    background: #2b2c37;
+    height: 5rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin: -1rem;
+}
+
+.nav-links-mobile{
+    display: none;
+}
