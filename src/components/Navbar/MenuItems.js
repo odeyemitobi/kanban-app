@@ -1,6 +1,6 @@
 export const MenuItems = [
     {
-        tittle: '+Add New Task',
+        title: '+Add New Task',
         url: '#',
         cName: 'nav-links-mobile'
     },
