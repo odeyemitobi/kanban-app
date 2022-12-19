@@ -1,0 +1,24 @@
+.shadow-task {
+    --tw-shadow: 0 4px 6px 0px rgba(54, 78, 126, .1);
+    --tw-shadow-colored: 0 4px 6px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+}
+
+.task-title {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.task-count {
+    color: #828fA3;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.task-card {
+    cursor: pointer;
+}
+
+.task-card:hover .task-title {
+    color: var(--primary);
+}

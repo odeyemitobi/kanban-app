@@ -14,7 +14,6 @@ function Navbar({ children }) {
   const [path, setPath] = useState();
 
   useEffect(() => {
-    console.log(location);
     SidebarData.map((item) => {
       if (item.path === location.pathname) {
         setTitle(item.title);

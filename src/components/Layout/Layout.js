@@ -1,12 +1,19 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import placeholder from "../../asset/icon/placeholder.svg";
 import TopNavBar from "../../components/TopNavBar/TopNavBar";
 import MenuButton from "../../components/MenuButton/MenuButton";
 import "./Layout.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fecthBoard, fecthBoards } from "../../redux/actions/boards.action";
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch();
+  const [data, setData] = useState([]);
   const [showBackdrop, setShowBackdrop] = useState(false);
   const sideBar = useRef(null);
+  const stateData = useSelector((state) => state.boards?.boards?.boards);
+  const singleBoard = useSelector((state) => state.boards?.board?.board);
+
   const handleClick = () => {
     if (!showBackdrop) {
       document.body.style.overflow = "hidden";
@@ -20,28 +27,29 @@ const Layout = ({ children }) => {
     setShowBackdrop(false);
     sideBar.current?.classList.toggle("-translate-x-full");
   };
-  const menu = [
-    {
-      name: "Platform Launch",
-      logo: placeholder,
-      link: "/",
-    },
-    {
-      name: "Marketing Plan",
-      logo: placeholder,
-      link: "/marketing",
-    },
-    {
-      name: "Roadmap",
-      logo: placeholder,
-      link: "/roadmap",
-    },
-    {
-      name: "+ Create New Board",
-      logo: placeholder,
-      link: "/create",
-    },
-  ];
+
+  const handleBoard = (index) => {
+    const newBoard = data.map((d, i) => {
+      return {
+        ...d,
+        isActive: index === i ? true : false,
+      };
+    });
+    setData(newBoard);
+    dispatch(fecthBoard(data[index]));
+  };
+
+  useEffect(() => {
+    if (stateData && stateData.length) {
+      setData(stateData);
+    } else {
+      setData([]);
+    }
+  }, [stateData]);
+
+  useEffect(() => {
+    dispatch(fecthBoards());
+  }, [dispatch]);
 
   return (
     <>
@@ -60,20 +68,29 @@ const Layout = ({ children }) => {
             <img src={placeholder} alt="" />
           </a>
           <nav>
-            <div className="ml-4 my-4 text-[#828fA3] text-[.75rem] font-[700]">ALL BOARDS (3)</div>
-            {menu.map((m) => (
+            <div className="ml-4 my-4 text-[#828fA3] text-[.75rem] font-[700]">
+              ALL BOARDS ({data?.length})
+            </div>
+            {data.map((d, index) => (
               <MenuButton
-                key={m.logo}
-                name={m.name}
-                logo={m.logo}
-                link={m.link}
+                key={d.board}
+                name={d.board}
+                isActive={d.isActive}
+                isNew={false}
+                onClick={() => handleBoard(index)}
               />
             ))}
+            <MenuButton
+              name={"+ Create New Board"}
+              isActive={false}
+              isNew={true}
+              onClick={handleBoard}
+            />
           </nav>
         </div>
         <div className="flex-1 md:ml-[19rem]">
-          <TopNavBar handleClick={handleClick} />
-          <div className="pt-24 pb-10 bg-[#20212c]">{children}</div>
+          <TopNavBar handleClick={handleClick} title={singleBoard?.board} />
+          <div className="pt-24 pb-10 bg-[#20212c] h-full">{children}</div>
         </div>
       </div>
     </>

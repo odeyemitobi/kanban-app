@@ -1,30 +1,14 @@
 import { Popover } from "antd";
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router";
-import placeholder from "../../asset/icon/placeholder.svg";
-import { SidebarData } from "../../utilis/SidebarData";
+import React, { useRef, useState } from "react";
 import { Button } from "../Button/Button";
 import "./TopNavBar.css";
 
-const TopNavBar = ({ handleClick }) => {
+const TopNavBar = ({ handleClick, title }) => {
   const [open, setOpen] = useState(false);
   const mobileMenuBtn = useRef(null);
   const handleToggle = () => {
     handleClick();
   };
-
-  const [title, setTitle] = useState("");
-  const location = useLocation();
-  const [path, setPath] = useState();
-
-  useEffect(() => {
-    console.log(location);
-    SidebarData.map((item) => {
-      if (item.path === location.pathname) {
-        setTitle(item.title);
-      }
-    });
-  }, []);
 
   const hide = () => {
     setOpen(false);
@@ -53,12 +37,12 @@ const TopNavBar = ({ handleClick }) => {
           </div>
           <Popover
             content={
-              <div className="w-[100px] p-3 bg-[#20212c]">
+              <div className="w-[120px] px-6 py-3 bg-[#20212c]">
                 <div>
-                  <a className="text-[12px] text-[#828fA3] font-[700]" onClick={hide}>Edit Board</a>
+                  <a className="text-[12px] text-[#828fA3] font-[500]" onClick={hide}>Edit Board</a>
                 </div>
-                <div>
-                  <a className="text-[12px] text-[red] font-[700]" onClick={hide}>Delete Board</a>
+                <div className="mt-4">
+                  <a className="text-[12px] text-[red] font-[500]" onClick={hide}>Delete Board</a>
                 </div>
               </div>
             }
@@ -66,14 +50,14 @@ const TopNavBar = ({ handleClick }) => {
             open={open}
             onOpenChange={handleOpenChange}
           >
-            <div type="primary" className="flex items-center cursor-pointer">
+            <div type="primary" className="flex items-center cursor-pointer nav-area">
               <svg
-                class="fill-medium-grey"
+                className="fill-medium-grey"
                 width="5"
                 height="20"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g fill-rule="evenodd">  
+                <g fillRule="evenodd">  
                     <circle cx="2.308" cy="2.308" r="2.308"></circle>
                     <circle cx="2.308" cy="10" r="2.308"></circle>
                     <circle cx="2.308" cy="17.692" r="2.308"></circle>  
