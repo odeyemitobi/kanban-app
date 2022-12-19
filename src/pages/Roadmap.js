@@ -4,9 +4,9 @@ import Layout from '../components/Layout/Layout'
 function Roadmap() {
   return (
     <Layout>
-    <div>
-        <div>Roadmap</div>
-    </div>
+      <div>
+          
+      </div>
     </Layout>
   )
 }

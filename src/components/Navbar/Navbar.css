@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    width: calc(100vw - 280px);
+    margin-left: 280px;
 }
 
 .nav-menu {
@@ -33,11 +35,10 @@
 
 .nav-menu2{
     background-color: #2b2c37;
-    width: 320px;
+    width: 280px;
     height: 100vh;
     display: flex;
-    position: fixed;
-    
+    position: fixed;  
 }
 
 .board-bars{
@@ -93,7 +94,6 @@
 
 .nav-text:hover {
     background-color:rgba(99, 95, 199, 0.1);
-    height: 30px;
     border-radius: 0px 26px 26px 0px;
     width: 90%;
 }
@@ -104,7 +104,6 @@
 
 .nav-text-create:hover {
     background-color: rgba(99, 95, 199, 0.1);
-    height: 30px;
     padding-right: 20px;
     border-radius: 0px 26px 26px 0px;
     width: 83%;
@@ -127,3 +126,16 @@
 span {
     margin-left: 16px;
 }
+
+.main-content {
+    margin-left: 280px;
+    background-color: rgb(32, 33, 44);
+    overflow: hidden;
+}
+
+.content {
+    background-color: #20212c;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+}
+

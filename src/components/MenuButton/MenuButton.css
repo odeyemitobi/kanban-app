@@ -1,0 +1,43 @@
+.selected div {
+  background-color: #635fc7;
+}
+
+.selected svg {
+  fill: #ffffff!important;
+}
+
+.selected span {
+  color: #ffffff!important;
+}
+
+.selected > div > .svg {
+  fill: #e18700;
+}
+
+.svg .a {
+  opacity: 0.8;
+}
+
+.nav-link-button, .create-link-button {
+  font-weight: 600;
+}
+
+.nav-link-button span {
+  color: #828fA3;
+}
+
+.nav-link-button svg {
+  fill: #828fA3;
+}
+
+.create-link-button span {
+  color: #635fc7;
+}
+
+.create-link-button svg {
+  fill: #635fc7;
+}
+
+.nav-link-button:hover, .create-link-button:hover {
+  background: rgba(99, 95, 199, 0.1);
+}
