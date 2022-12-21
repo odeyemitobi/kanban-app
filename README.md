@@ -1,6 +1,6 @@
 # KANBAN-APP
  
- ![Placeholder](./web-content/src/asset/icon/placeholder.svg)
+ ![Logo](./web-content/src/read-me-img/logo.png)
 
 
 # GENERAL INFORMATION
