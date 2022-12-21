@@ -9,7 +9,7 @@
 
 # GENERAL INFORMATION
 
-This project involves a fully-functional task management app with a light/dark mode toggle. Kanban App is a project undertaking by students in Seamfix NextGen Academy for the completion of a 6 months training on web development.
+This project involves a fully-functional task management app with a light/dark mode toggle. Kanban App is a project undertaking by a  student of Seamfix NextGen Academy for the completion of a 6 months training on web development.
 
 
 
