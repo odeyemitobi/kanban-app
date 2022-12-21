@@ -1,6 +1,6 @@
 # KANBAN-APP
  
- ![Logo](http://url/src/read-me-img/logo.png)
+ ![Logo](http://url/src/readme-img/logo.png)
 
 
 # GENERAL INFORMATION
