@@ -65,5 +65,5 @@ for new users of this project, you will need to install the dependencies. To do 
  **Odeyemi Oluwatobiloba**
 
 * GitHub: [Odeyemi Oluwatobiloba](https://github.com/Odeyemitobi)
-* LinkedIn: [Odeyemi Oluwatobiloba](https://www.linkedin.com/in/Odeyemi-Oluwatobiloba/)
+* LinkedIn: [Odeyemi Oluwatobiloba](http://www.linkedin.com/in/odeyemi-oluwatobiloba-581246249)
 
